@@ -11,7 +11,7 @@ class Profile(models.Model):
     Bio = models.CharField(max_length=2000)
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
     location = models.CharField(max_length=200)
-    phone_number = models.IntegerField(max_length=10)
+    phone_number = models.IntegerField(default=0)
     email = models.CharField(max_length=500)
 
     def save_profile(self):
@@ -44,6 +44,7 @@ class Likes(models.Model):
     """
     profile = models.ForeignKey(Profile)
     Likes = models.IntegerField(default=0)
+
 
 
 class Image(models.Model):

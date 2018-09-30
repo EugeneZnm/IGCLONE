@@ -98,6 +98,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -116,6 +119,7 @@
     <option name="width" value="1336" />
     <option name="height" value="766" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -128,17 +132,6 @@
             <path>
               <item name="IGCLONE" type="b2602c69:ProjectViewProjectNode" />
               <item name="IGCLONE" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IGCLONE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IGCLONE" type="462c0819:PsiDirectoryNode" />
-              <item name="igcloned" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IGCLONE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IGCLONE" type="462c0819:PsiDirectoryNode" />
-              <item name="igcloned" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -189,7 +182,7 @@
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" weight="0.3275862" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49772727" visible="true" weight="0.45510834" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49772727" visible="true" weight="0.45652175" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5022727" side_tool="true" weight="0.33695653" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="bottom" id="Thumbnails" order="12" weight="0.32919255" />

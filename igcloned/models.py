@@ -13,4 +13,23 @@ class Image(models.Models):
     likes = models.IntegerField(default=0)
     comment = models.CharField(max_length=10000)
 
+    def save_image(self):
+        """
+        method to save images
+        :return:
+        """
+        self.save()
 
+    def get_image(self):
+        """
+        method to get image by id
+        :return:
+        """
+        self.get_image()
+
+    def delete_image(self):
+        """
+        method to delete image
+        :return:
+        """
+        self.delete()

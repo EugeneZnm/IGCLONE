@@ -12,6 +12,7 @@ class Image(models.Models):
     caption = models.CharField(max_length=1000)
     likes = models.IntegerField(default=0)
     comment = models.CharField(max_length=10000)
+    profile = models.ForeignKey(Profile, null=True, blank=True)
 
     def save_image(self):
         """
@@ -20,12 +21,14 @@ class Image(models.Models):
         """
         self.save()
 
-    def get_image(self):
+    @classmethod
+    def get_image(cls, image_id):
         """
         method to get image by id
         :return:
         """
-        self.get_image()
+        images = cls.objects.filter(id=image_id)
+        return images
 
     def delete_image(self):
         """
@@ -33,3 +36,38 @@ class Image(models.Models):
         :return:
         """
         self.delete()
+
+
+class Profile(models.Model):
+    """
+    method to create profile
+    """
+    avatar = models.ImageField(upload_to='media/profile/', blank=True)
+    Bio = models.CharField(max_length=2000)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
+    location = models.CharField(max_length=200)
+    phone_number = models.IntegerField(max_length=10)
+    email = models.CharField(max_length=500)
+
+    def save_profile(self):
+        """
+        method to save profile
+        :return:
+        """
+        self.save()
+
+    def delete_profile(self):
+        """
+        method to delete profile
+        :return:
+        """
+        self.delete()
+
+    # @classmethod
+    # def find_profile(cls, name):
+    #     """
+    #     method to find profiles by name
+    #     :param name:
+    #     :return:
+    #     """
+    #     name = cls.objects.filter()

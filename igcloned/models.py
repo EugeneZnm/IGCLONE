@@ -3,41 +3,6 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
-class Image(models.Models):
-    """
-    Image model creating table
-    """
-    image = models.ImageField(upload_to='media/', blank=True)
-    image_name = models.CharField(max_length=200)
-    caption = models.CharField(max_length=1000)
-    likes = models.IntegerField(default=0)
-    comment = models.CharField(max_length=10000)
-    profile = models.ForeignKey(Profile, null=True, blank=True)
-
-    def save_image(self):
-        """
-        method to save images
-        :return:
-        """
-        self.save()
-
-    @classmethod
-    def get_image(cls, image_id):
-        """
-        method to get image by id
-        :return:
-        """
-        images = cls.objects.filter(id=image_id)
-        return images
-
-    def delete_image(self):
-        """
-        method to delete image
-        :return:
-        """
-        self.delete()
-
-
 class Profile(models.Model):
     """
     method to create profile
@@ -71,3 +36,56 @@ class Profile(models.Model):
     #     :return:
     #     """
     #     name = cls.objects.filter()
+
+
+class Likes(models.Model):
+    """
+    Like model for likes on images
+    """
+    profile = models.ForeignKey(Profile)
+    Likes = models.IntegerField(default=0)
+
+
+class Image(models.Model):
+    """
+    Image model creating table
+    """
+    image = models.ImageField(upload_to='media/', blank=True)
+    image_name = models.CharField(max_length=200)
+    caption = models.CharField(max_length=1000)
+    profile = models.ForeignKey(Profile, null=True, blank=True)
+    likes = models.ForeignKey(Likes)
+
+    def save_image(self):
+        """
+        method to save images
+        :return:
+        """
+        self.save()
+
+    @classmethod
+    def get_image(cls, image_id):
+        """
+        method to get image by id
+        :return:
+        """
+        images = cls.objects.filter(id=image_id)
+        return images
+
+    def delete_image(self):
+        """
+        method to delete image
+        :return:
+        """
+        self.delete()
+
+
+class Comments(models.Model):
+    """
+    comment model for comments
+    """
+    comment = models.TextField()
+    profile = models.ForeignKey(Profile)
+    image = models.ForeignKey(Image)
+
+

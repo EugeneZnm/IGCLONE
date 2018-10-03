@@ -46,6 +46,13 @@ class Likes(models.Model):
     Likes = models.IntegerField(default=0)
 
 
+class Comments(models.Model):
+    """
+    comment model for comments
+    """
+    comment = models.TextField()
+    profile = models.ForeignKey(Profile)
+
 
 class Image(models.Model):
     """
@@ -81,12 +88,7 @@ class Image(models.Model):
         self.delete()
 
 
-class Comments(models.Model):
-    """
-    comment model for comments
-    """
-    comment = models.TextField()
-    profile = models.ForeignKey(Profile)
-    image = models.ForeignKey(Image)
+
+
 
 

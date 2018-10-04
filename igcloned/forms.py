@@ -4,6 +4,10 @@ from django.contrib.auth.models import User
 
 
 class SignUpForm(UserCreationForm):
+    """
+    creating signupform
+    UserCreationForm passed as a parameter of signup form making SignUpForm extend UserCreationForm
+    """
     email = forms.CharField(max_length=254, required=True)
 
     class Meta:

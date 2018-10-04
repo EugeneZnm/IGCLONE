@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.static',
     'igcloned.apps.IgclonedConfig',
     'bootstrap4',
     'crispy_forms',
@@ -125,4 +125,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/staticfiles/'
+STATIC_URL = '/static/'
+
+# setting logout redirect
+LOGOUT_REDIRECT_URL = 'login'
+
+# login redirect
+LOGIN_REDIRECT_URL = 'home'

@@ -7,5 +7,7 @@ from django.conf import settings
 from . import views
 
 urlpatterns =[
-    url(r'^signup/$', views.signup, name='signup')
+    url(r'^signup/$', views.signup, name='signup'),
+
+    url(r'^profile/', views.profile, name='profile')
 ]

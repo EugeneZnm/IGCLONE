@@ -1,10 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% block body %}
+  <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'profile' %}">CLONEWARS</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainMenu">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">{{ user.username }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-</body>
-</html>
+  <div class="container">
+    <ol class="breadcrumb my-4">
+      {% block breadcrumb %}
+      {% endblock %}
+    </ol>
+    {% block content %}
+    {% endblock %}
+  </div>
+{% endblock body %}

@@ -6,6 +6,9 @@ from django.contrib.auth.forms import  UserCreationForm
 # import login as auth-login to prevent clasing with inbuilt,login view
 from django.contrib.auth import login as auth_login
 
+# import SignupForm from forms.py
+from .forms import SignUpForm
+
 
 # Create your views here.
 
@@ -25,7 +28,7 @@ def signup(request):
     """
     # checking if request method is a post
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = SignUpForm(request.POST)
 
         # form validation
         if form.is_valid():
@@ -37,6 +40,7 @@ def signup(request):
             auth_login(request, user)
             return redirect('profile')
     else:
-        form = UserCreationForm()
+        form = SignUpForm()
+
     return render(request, 'registration/registration_form.html', {'form':form})
 

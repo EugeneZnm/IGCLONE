@@ -44,3 +44,12 @@ def signup(request):
 
     return render(request, 'registration/registration_form.html', {'form':form})
 
+
+# def login(request):
+#     """
+#     login view function
+#     :param request:
+#     :return:
+#     """
+#     if request.method == 'POST':
+#         form =

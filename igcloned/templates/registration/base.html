@@ -19,6 +19,9 @@
     {% bootstrap_css %}
   {% endblock %}
 
+    {% block stylesheet %}
+      <link rel="stylesheet" href="{% staticfiles 'css/accounts.css' %}">
+    {% endblock %}
 </head>
 
 <body>

@@ -1,21 +1,31 @@
-{%extends "registration/base.html"%} {% load bootstrap4 %}
+{%extends "registration/base.html"%} {% load static %}
+ {% load bootstrap4 %}
 {% load crispy_forms_tags %}
 
 {% block content%}
 
-    <div class="container jumbotron" style="width: 380px;" >
-        <h2 style="text-align: center;">SIGN UP</h2>
-        <!--<img src="/image/unnamed.jpg" alt="igclone">-->
+    <div class="container jumbotron" style="width: 600px;" >
 
         <!-- Signup Form-->
-        <div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10 col-sm-12">
+              <div class="card">
+                <div class="card-body">
+                    <img src="{% staticfiles 'image/unnamed.jpg' %}" alt="igclone">
 
+                  <h3 class="card-title" style="text-align: center;">SIGN UP</h3>
+                  <form method="post" novalidate>
+                    {% csrf_token %}
+                    {% include 'Includes/form.html' %}
+                    <!--{{ form.as_p}}-->
+                    <button type="submit" class="bt btn-success btn-block" style="margin-left: 0em;">Create Account</button>
+                  </form>
+                </div>
+                <div class="card-footer text-muted text-center">
+                  Already have an account? <a href="{% url 'login' %}">Log in</a>
+                </div>
+              </div>
+            </div>
         </div>
-        <form method="post" novalidate>
-            {% csrf_token %}
-            {% include 'Includes/form.html'%}
-            <!--{{ form.as_p}}-->
-            <button type="submit" class="bt btn-success" style="margin-left: 6em;">Create Account</button>
-        </form>
     </div>
 {% endblock %}

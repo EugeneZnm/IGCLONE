@@ -139,4 +139,7 @@ LOGOUT_REDIRECT_URL = 'login'
 # login redirect
 LOGIN_REDIRECT_URL = 'login'
 
+# defining the login url of application
+LOGIN_URL = 'login'
+
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

@@ -60,5 +60,5 @@ urlpatterns = [
 
     # url(r'^logout/$', auth_views.logout, {"next_page": '/'}),
 
-    # url(r'^logout/$', auth_views.logout, {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
+    url(r'^logout/$', auth_views.logout, {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
     ]

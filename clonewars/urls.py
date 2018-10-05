@@ -26,6 +26,8 @@ urlpatterns = [
 
     url(r'^profile/', views.profile, name='profile'),
 
+    url(r'^profile_edit/', views.profile_edit, name='edit_profile'),
+
     url(r'^accounts/', include('registration.backends.simple.urls')),
 
     url(r'^login/$', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),

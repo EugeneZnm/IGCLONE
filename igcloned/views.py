@@ -24,6 +24,14 @@ def profile(request):
     return render(request, 'Profile/profile.html')
 
 
+@login_required(login_url='/registration/login/')
+def profile_edit(request):
+    """
+    view function to render profile
+
+    """
+    return render(request, 'Profile/profile_edit.html')
+
 
 # SIGNUP VIEW FUNCTION
 def signup(request):

@@ -24,6 +24,7 @@ def profile(request):
     return render(request, 'Profile/profile.html')
 
 
+
 # SIGNUP VIEW FUNCTION
 def signup(request):
     """

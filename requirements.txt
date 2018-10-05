@@ -1,0 +1,16 @@
+certifi==2018.8.24
+chardet==3.0.4
+confusable-homoglyphs==3.2.0
+Django==1.11
+django-bootstrap4==0.0.7
+django-crispy-forms==1.7.2
+django-registration==2.4.1
+django-widget-tweaks==1.4.3
+idna==2.7
+Pillow==5.2.0
+psycopg2==2.7.5
+python-dateutil==2.7.3
+pytz==2018.5
+requests==2.19.1
+six==1.11.0
+urllib3==1.23

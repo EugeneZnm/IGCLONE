@@ -107,7 +107,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -137,7 +136,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGOUT_REDIRECT_URL = 'login'
 
 # login redirect
-LOGIN_REDIRECT_URL = 'login'
+LOGIN_REDIRECT_URL = 'profile'
 
 # defining the login url of application
 LOGIN_URL = 'login'

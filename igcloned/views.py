@@ -9,10 +9,13 @@ from django.contrib.auth import login as auth_login
 # import SignupForm from forms.py
 from .forms import SignUpForm
 
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
+
 # PROFILE VIEW FUNCTION
+@login_required(login_url='/registration/login/')
 def profile(request):
     """
     view function to render profile

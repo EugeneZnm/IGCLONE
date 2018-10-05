@@ -4,10 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script>
+        UPLOADCARE_PUBLIC_KEY ='1c8522c5f21d2ecc449a';
+    </script>
+    <script charset="utf-8" src="https://ucarecdn.com/libs/widget/3.6.1/uploadcare.full.min.js"></script>
 </head>
 <body>
+
     {% block content %}
-      <h2>iiiiiiiii PROFILE</h2>
+    <h3>{{user.userprofile.avatar}}</h3>
+    <h2>Name: {{user.username}}</h2>
+    <h3>Email: {{user.email}}</h3>
+    <h3>{{user.userprofile.bio}}</h3>
+    <h3>{{user.userprofile.location}}</h3>
+    <h3>{{user.userprofile.phone_number}}</h3>
     {% endblock %}
+
+
+
 </body>
 </html>

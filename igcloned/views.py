@@ -7,11 +7,11 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login as auth_login
 
 # import SignupForm from forms.py
-from .forms import SignUpForm, EditProfileForm
+from .forms import SignUpForm, EditProfileForm, UploadImageForm
 
 from django.contrib.auth.decorators import login_required
 
-from .models import Profile
+from .models import Profile, Image
 
 
 # Create your views here.
@@ -25,7 +25,24 @@ def profile(request):
 
     """
     profile = Profile.objects.get(user = request.user)
-    return render(request, 'Profile/profile.html', {'profile': profile})
+    image = Image.objects.all()
+    return render(request, 'Profile/profile.html', {'profile': profile, 'image':image})
+
+
+@login_required(login_url='/registration/login/')
+def new_image(request):
+    current_user = request.user
+
+    if request.method == 'POST':
+        upform = UploadImageForm(request.POST, request.FILES)
+        if upform.is_valid():
+            image = UploadImageForm.save(commit=False)
+            image.user = current_user
+            image.save()
+        return redirect('profile')
+    else:
+        upform = UploadImageForm()
+    return render(request, 'img.html', {"upform": upform})
 
 
 @login_required(login_url='/registration/login/')
@@ -34,7 +51,7 @@ def profile_edit(request):
     view function to render profile
 
     """
-    form=EditProfileForm()
+    form = EditProfileForm()
     current_user = request.user
     if request.method == 'POST':
         form = EditProfileForm(request.POST, request.FILES, instance=current_user.profile)

@@ -25,5 +25,5 @@ class EditProfileForm(forms.ModelForm):
 
 class UploadImageForm(forms.ModelForm):
     class Meta:
-        model = Image
+        model = image
         fields = ['image', 'image_name', 'caption']

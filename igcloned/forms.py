@@ -22,6 +22,8 @@ class EditProfileForm(forms.ModelForm):
         exclude = ['avatar']
         fields = [ 'Bio', 'location', 'phone_number']
 
+
 class UploadImageForm(forms.ModelForm):
     class Meta:
         model = Image
+        fields = ['image', 'image_name', 'caption']

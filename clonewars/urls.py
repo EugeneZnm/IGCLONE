@@ -20,13 +20,14 @@ from igcloned import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+    url(r'',include('igcloned.urls')),
     url(r'^admin/', admin.site.urls),
 
     url(r'^$', views.signup, name='signup'),
 
     url(r'^profile/', views.profile, name='profile'),
 
-    url(r'^profile_edit/', views.profile_edit, name='edit_profile'),
+
 
     url(r'^accounts/', include('registration.backends.simple.urls')),
 
@@ -60,5 +61,5 @@ urlpatterns = [
 
     # url(r'^logout/$', auth_views.logout, {"next_page": '/'}),
 
-    # url(r'^logout/$', auth_views.logout, {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
+    url(r'^logout/$', auth_views.logout, {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
     ]

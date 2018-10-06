@@ -12,9 +12,8 @@ class Profile(models.Model):
     """
     method to create profile
     """
-    avatar = models.ImageField(upload_to='media/profile/', blank=True)
+    avatar = models.ImageField(upload_to='media', null=True)
     Bio = models.CharField(max_length=2000)
-
     # deletion of profile and user when deleted
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
     location = models.CharField(max_length=200)
@@ -49,7 +48,7 @@ class Likes(models.Model):
     """
     Like model for likes on images
     """
-    profile = models.ForeignKey(Profile)
+
     Likes = models.IntegerField(default=0)
 
 
@@ -58,18 +57,18 @@ class Comments(models.Model):
     comment model for comments
     """
     comment = models.TextField()
-    profile = models.ForeignKey(Profile)
+
 
 
 class Image(models.Model):
     """
     Image model creating table
     """
-    image = models.ImageField(upload_to='media/', blank=True)
+    image = models.ImageField(upload_to='media', blank=True)
     image_name = models.CharField(max_length=200)
     caption = models.CharField(max_length=1000)
-    profile = models.ForeignKey(Profile, null=True, blank=True)
-    likes = models.ForeignKey(Likes)
+    profile = models.ForeignKey(Profile, null=True)
+    likes = models.ForeignKey(Likes, null=True)
 
     def save_image(self):
         """

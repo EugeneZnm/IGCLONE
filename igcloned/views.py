@@ -39,7 +39,7 @@ def profile_edit(request):
     if request.method == 'POST':
         form = EditProfileForm(request.POST, request.FILES, instance=current_user.profile)
         if form.is_valid():
-            detail=form.save()
+            form.save()
 
             return redirect('profile')
 
@@ -62,7 +62,7 @@ def signup(request):
 
             # user passed as argument to auth_login function
             auth_login(request, user)
-            return redirect('profile')
+            return redirect('edit_profile')
     else:
         form = SignUpForm()
 

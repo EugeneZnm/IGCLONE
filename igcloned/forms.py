@@ -13,10 +13,15 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'password1', 'password2')
+        fields = ['username', 'email', 'password1', 'password2']
 
 
 class EditProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('avatar', 'Bio', 'phone_number')
+        exclude = ['avatar']
+        fields = [ 'Bio', 'location', 'phone_number']
+
+class UploadImageForm(forms.ModelForm):
+    class Meta:
+        model = Image

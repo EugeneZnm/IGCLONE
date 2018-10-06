@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+{% block content%}
+   <div class="container jumbotron" style="width: 600px;" >
+
+        <!-- Signup Form-->
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10 col-sm-12">
+              <div class="card">
+                <div class="card-body">
+                  <form method="post" action="{% url 'edit_profile'%}" novalidate>
+                    {% csrf_token %}
+                    {% include 'Includes/form.html' %}
+                    <!--{{ form.as_p}}-->
+                    <button type="submit" class="bt btn-success btn-block" style="margin-left: 0em;">Update Profile</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+        </div>
+   </div>
+{% endblock %}

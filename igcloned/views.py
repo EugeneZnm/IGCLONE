@@ -11,7 +11,9 @@ from .forms import SignUpForm, EditProfileForm, UploadImageForm
 
 from django.contrib.auth.decorators import login_required
 
-from .models import Profile, Image
+from django.contrib.auth.models import User
+
+from .models import Profile, Image, Follower
 
 
 # Create your views here.
@@ -58,6 +60,21 @@ def profile_edit(request):
             return redirect('profile')
 
     return render(request, 'Profile/profile_edit.html', {'form': form})
+
+
+@login_required(login_url='/registration/login/')
+def follower(request, operation, pk):
+    """
+    view function to change followers
+
+    """
+    new_follower = User.objects.get(pk=pk)
+    if operation == 'add':
+        Follower.make_follower(request.user, new_follower)
+    elif operation == 'remove':
+        Follower.remove_follower(request, new_follower)
+
+    return redirect('profile')
 
 
 # SIGNUP VIEW FUNCTION

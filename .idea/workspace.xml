@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0e2322d8-f17e-45d9-9227-532590544d69" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/igcloned/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/igcloned/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/igcloned/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/igcloned/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +45,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="3729" />
-          <entry key="py" value="7054" />
+          <entry key="py" value="7387" />
           <entry key="txt" value="8" />
         </counts>
       </usages-collector>
@@ -52,13 +53,13 @@
         <counts>
           <entry key="HTML" value="3729" />
           <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Python" value="7054" />
+          <entry key="Python" value="7387" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.590573">
+    <splitter split-orientation="horizontal" split-proportion="0.49545455">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -84,11 +85,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/igcloned/urls.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="210">
-                  <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+                  <caret line="14" column="58" lean-forward="true" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
                   <folding>
                     <element signature="e#0#32#0" expanded="true" />
                   </folding>
@@ -119,16 +120,17 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/igcloned/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="770">
-                  <caret line="68" column="3" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="3" />
+                <state relative-caret-position="352">
+                  <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
                   <folding>
                     <element signature="e#0#45#0" expanded="true" />
-                    <marker date="1538912528624" expanded="true" signature="580:1717" ph="..." />
-                    <marker date="1538912528624" expanded="true" signature="2274:2279" ph="..." />
-                    <marker date="1538912528624" expanded="true" signature="2379:2386" ph="..." />
+                    <marker date="1538918679892" expanded="true" signature="635:2166" ph="..." />
+                    <marker date="1538918679892" expanded="true" signature="1859:2166" ph="..." />
+                    <marker date="1538918679892" expanded="true" signature="2723:2728" ph="..." />
+                    <marker date="1538918679892" expanded="true" signature="2828:2835" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -137,7 +139,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/clonewars/urls.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="381">
+                <state relative-caret-position="336">
                   <caret line="39" column="29" lean-forward="true" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
                   <folding>
                     <element signature="e#643#675#0" expanded="true" />
@@ -233,8 +235,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/igcloned/forms.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="338">
-                  <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+                <state relative-caret-position="143">
+                  <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
                   <folding>
                     <element signature="e#0#24#0" expanded="true" />
                     <marker date="1538914069573" expanded="true" signature="540:545" ph="..." />
@@ -304,7 +306,6 @@
         <option value="$PROJECT_DIR$/igcloned/templates/img.html" />
         <option value="$PROJECT_DIR$/igcloned/templates/navbar.html" />
         <option value="$PROJECT_DIR$/igcloned/templates/Profile/img.html" />
-        <option value="$PROJECT_DIR$/igcloned/views.py" />
         <option value="$PROJECT_DIR$/igcloned/templates/registration/registration_form.html" />
         <option value="$PROJECT_DIR$/igcloned/templates/Profile/profile_edit.html" />
         <option value="$PROJECT_DIR$/clonewars/urls.py" />
@@ -312,6 +313,7 @@
         <option value="$PROJECT_DIR$/igcloned/forms.py" />
         <option value="$PROJECT_DIR$/igcloned/models.py" />
         <option value="$PROJECT_DIR$/igcloned/urls.py" />
+        <option value="$PROJECT_DIR$/igcloned/views.py" />
       </list>
     </option>
   </component>
@@ -444,7 +446,7 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.18030304" />
+      <window_info content_ui="combo" id="Project" order="2" weight="0.18030304" />
       <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.34937888" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3262987" />
@@ -454,7 +456,7 @@
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" weight="0.3275862" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49772727" visible="true" weight="0.23291926" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49772727" visible="true" weight="0.23291926" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5022727" side_tool="true" weight="0.33695653" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.32919255" />
       <window_info anchor="bottom" id="Thumbnails" order="12" weight="0.32919255" />
@@ -643,25 +645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/igcloned/templates/navbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="15" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="11" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/igcloned/templates/registration/registration_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/igcloned/templates/Profile/img.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -714,9 +697,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/igcloned/templates/registration/registration_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/igcloned/templates/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="15" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/clonewars/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
+        <state relative-caret-position="336">
           <caret line="39" column="29" lean-forward="true" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
           <folding>
             <element signature="e#643#675#0" expanded="true" />
@@ -724,27 +726,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/igcloned/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="68" column="3" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-            <marker date="1538912528624" expanded="true" signature="580:1717" ph="..." />
-            <marker date="1538912528624" expanded="true" signature="2274:2279" ph="..." />
-            <marker date="1538912528624" expanded="true" signature="2379:2386" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/igcloned/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="143">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
             <marker date="1538914069573" expanded="true" signature="540:545" ph="..." />
             <marker date="1538914069573" expanded="true" signature="712:717" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/igcloned/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="58" lean-forward="true" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -761,12 +760,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/igcloned/urls.py">
+    <entry file="file://$PROJECT_DIR$/igcloned/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+        <state relative-caret-position="352">
+          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#45#0" expanded="true" />
+            <marker date="1538918679892" expanded="true" signature="635:2166" ph="..." />
+            <marker date="1538918679892" expanded="true" signature="1859:2166" ph="..." />
+            <marker date="1538918679892" expanded="true" signature="2723:2728" ph="..." />
+            <marker date="1538918679892" expanded="true" signature="2828:2835" ph="..." />
           </folding>
         </state>
       </provider>

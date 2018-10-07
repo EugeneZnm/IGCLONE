@@ -12,5 +12,5 @@ urlpatterns =[
 
     url(r'^profile/', views.profile, name='profile'),
 
-    url(r'^connect/(?p<operation>,+)/(?p<pk>\d+)/$', views.change_follower, name='add_follower'),
+    url(r'^follow/(?P<operation>,+)/(?P<pk>\d+)/$', views.follower, name='follow'),
 ]

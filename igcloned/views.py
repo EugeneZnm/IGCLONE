@@ -32,17 +32,14 @@ def profile(request):
 @login_required(login_url='/registration/login/')
 def new_image(request):
     current_user = request.user
-
+    upform = UploadImageForm()
     if request.method == 'POST':
-        upform = UploadImageForm(request.POST, request.FILES)
+        upform = UploadImageForm(request.POST, request.FILES, instance=current_user.profile)
         if upform.is_valid():
-            image = UploadImageForm.save(commit=False)
-            image.user = current_user
-            image.save()
+            upform.save()
         return redirect('profile')
-    else:
-        upform = UploadImageForm()
-    return render(request, 'img.html', {"upform": upform})
+
+    return render(request, 'Profile/img.html', {"upform": upform})
 
 
 @login_required(login_url='/registration/login/')

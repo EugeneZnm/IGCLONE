@@ -27,7 +27,7 @@ urlpatterns = [
 
     url(r'^profile/', views.profile, name='profile'),
 
-
+    url(r'^new_image/', views.new_image, name='new_image'),
 
     url(r'^accounts/', include('registration.backends.simple.urls')),
 

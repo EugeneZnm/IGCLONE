@@ -59,7 +59,6 @@ class Comments(models.Model):
     comment = models.TextField()
 
 
-
 class Image(models.Model):
     """
     Image model creating table
@@ -94,7 +93,18 @@ class Image(models.Model):
         self.delete()
 
 
+class Follower(models.Model):
 
+    users = models.ManyToManyField(User)
+    current_user = models.ForeignKey(User, related_name='owner')
 
+    @classmethod
+    def make_follower(cls, current_user, new_follower):
+        follower, created = cls.objects.get_or_create(
+            # check whether follower object has current user as owner of friends list
+            current_user=current_user
+        )
+
+        follower.users.add(new_follower)
 
 

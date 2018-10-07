@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e2322d8-f17e-45d9-9227-532590544d69" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/igcloned/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/igcloned/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/igcloned/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/igcloned/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +44,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="3729" />
-          <entry key="py" value="6960" />
+          <entry key="py" value="7054" />
           <entry key="txt" value="8" />
         </counts>
       </usages-collector>
@@ -52,13 +52,13 @@
         <counts>
           <entry key="HTML" value="3729" />
           <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Python" value="6960" />
+          <entry key="Python" value="7054" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.50669414">
+    <splitter split-orientation="horizontal" split-proportion="0.590573">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -70,25 +70,25 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/igcloned/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="232">
-                  <caret line="98" column="74" selection-start-line="98" selection-start-column="74" selection-end-line="98" selection-end-column="74" />
+                <state relative-caret-position="412">
+                  <caret line="116" column="29" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
                   <folding>
                     <element signature="e#0#28#0" expanded="true" />
-                    <marker date="1538915007002" expanded="true" signature="310:861" ph="..." />
-                    <marker date="1538915007002" expanded="true" signature="2253:2678" ph="..." />
+                    <marker date="1538915188852" expanded="true" signature="310:861" ph="..." />
+                    <marker date="1538915188852" expanded="true" signature="2253:2988" ph="..." />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/igcloned/urls.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="13" selection-start-line="13" selection-end-line="13" />
+                <state relative-caret-position="210">
+                  <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
                   <folding>
                     <element signature="e#0#32#0" expanded="true" />
                   </folding>
@@ -301,7 +301,6 @@
         <option value="$PROJECT_DIR$/igcloned/templates/registration/base.html" />
         <option value="$PROJECT_DIR$/clonewars/settings.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/igcloned/urls.py" />
         <option value="$PROJECT_DIR$/igcloned/templates/img.html" />
         <option value="$PROJECT_DIR$/igcloned/templates/navbar.html" />
         <option value="$PROJECT_DIR$/igcloned/templates/Profile/img.html" />
@@ -312,6 +311,7 @@
         <option value="$PROJECT_DIR$/igcloned/templates/Profile/profile.html" />
         <option value="$PROJECT_DIR$/igcloned/forms.py" />
         <option value="$PROJECT_DIR$/igcloned/models.py" />
+        <option value="$PROJECT_DIR$/igcloned/urls.py" />
       </list>
     </option>
   </component>
@@ -440,10 +440,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" weight="0.18030304" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.18030304" />
       <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.34937888" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3262987" />
@@ -453,7 +454,7 @@
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" weight="0.3275862" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49772727" visible="true" weight="0.23291926" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49772727" visible="true" weight="0.23291926" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5022727" side_tool="true" weight="0.33695653" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.32919255" />
       <window_info anchor="bottom" id="Thumbnails" order="12" weight="0.32919255" />
@@ -625,16 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/igcloned/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clonewars/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
@@ -760,12 +751,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/igcloned/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="98" column="74" selection-start-line="98" selection-start-column="74" selection-end-line="98" selection-end-column="74" />
+        <state relative-caret-position="412">
+          <caret line="116" column="29" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
-            <marker date="1538915007002" expanded="true" signature="310:861" ph="..." />
-            <marker date="1538915007002" expanded="true" signature="2253:2678" ph="..." />
+            <marker date="1538915188852" expanded="true" signature="310:861" ph="..." />
+            <marker date="1538915188852" expanded="true" signature="2253:2988" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/igcloned/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>

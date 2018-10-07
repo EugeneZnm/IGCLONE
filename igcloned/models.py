@@ -96,7 +96,7 @@ class Image(models.Model):
 class Follower(models.Model):
 
     users = models.ManyToManyField(User)
-    current_user = models.ForeignKey(User, related_name='owner')
+    current_user = models.ForeignKey(User, related_name='owner', null=True)
 
     @classmethod
     def make_follower(cls, current_user, new_follower):
@@ -106,5 +106,14 @@ class Follower(models.Model):
         )
 
         follower.users.add(new_follower)
+
+    @classmethod
+    def remove_follower(cls, current_user, new_follower):
+        follower, created = cls.objects.get_or_create(
+            # check whether follower object has current user as owner of friends list
+            current_user=current_user
+        )
+
+        follower.users.remove(new_follower)
 
 

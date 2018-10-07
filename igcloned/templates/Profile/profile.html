@@ -8,55 +8,81 @@
 <body>
 
     {% block content %}
-    <div>
-        <div class="row container jumbotron" style="width: 700px; height: 350px; position: relative; left: 33%; background-color: #f4a460 !important;">
-            <div class="col-md-4">
-                <div class="card-body" style="position: relative; top: -20%;">
-                    {% if profile.avatar %}
-                    <img src="{{ profile.avatar.url }}" alt="card image cap">
-                    {% else %}
-                 <div >
-                    <img style="width: 200px;" src="https://www.w3schools.com/howto/img_avatar.png" alt="card image cap">
-                 </div>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="row container jumbotron " style="width: 700px; height: 350px; position: relative; left: 33%; background-color: #f4a460 !important;">
+                <div class="col-md-4">
+                    <div class="card-body" style="position: relative; top: -20%;">
+                        {% if profile.avatar %}
+                        <img src="{{ profile.avatar.url }}" alt="card image cap">
+                        {% else %}
+                     <div >
+                        <img style="width: 200px;" src="https://www.w3schools.com/howto/img_avatar.png" alt="card image cap">
+                     </div>
 
-                    {% endif %}
-                    <div class="card-footer" style="width: 200px;">
-                        <h5 style="text-align: center; color:white;" class="card-title">{{user.username}}</h5>
+                        {% endif %}
+                        <div class="card-footer" style="width: 200px;">
+                            <h5 style="text-align: center; color:white;" class="card-title">{{user.username}}</h5>
+                        </div>
+
                     </div>
-
+                </div>
+                <div class="col-md-8" style="position: relative; top: -20%;">
+                    <div class="card-body" style="text-align: center;">
+                        <h5 class="card-title" style="color: white;">Email: {{user.email}}</h5>
+                        <h5 class="card-title" style="color: white;">Bio:   {{profile.Bio}}</h5>
+                        <h5 class="card-title" style="color: white;">Phone: {{profile.phone_number}}</h5>
+                        <h5 class="card-title" style="color: white;">Location: {{profile.location}}</h5>
+                        <a class="nav-link btn btn-danger" href="{% url 'edit_profile' %}" style="width: 110px; margin-left: 8em; text-align: center;">Edit Profile</a></br>
+                        <a class="nav-link btn btn-warning" href="{% url 'new_image' %}" style="width: 130px; margin-left: 7.5em; text-align: center;">Upload Image</a>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-8" style="position: relative; top: -20%;">
-                <div class="card-body" style="text-align: center;">
-                    <h5 class="card-title" style="color: white;">Email: {{user.email}}</h5>
-                    <h5 class="card-title" style="color: white;">Bio:   {{profile.Bio}}</h5>
-                    <h5 class="card-title" style="color: white;">Phone: {{profile.phone_number}}</h5>
-                    <h5 class="card-title" style="color: white;">Location: {{profile.location}}</h5>
-                    <a class="nav-link btn btn-danger" href="{% url 'edit_profile' %}" style="width: 110px; margin-left: 8em; text-align: center;">Edit Profile</a></br>
-                    <a class="nav-link btn btn-warning" href="{% url 'new_image' %}" style="width: 130px; margin-left: 7.5em; text-align: center;">Upload Image</a>
-                </div>
+            <div>
+                {% for images in image%}
+                    <ul style="margin-left: 6.5em;">
+                        <li style="display:inline;">
+                            <h5 class="card-header" style="width:30rem; text-align: center; background-color: grey; color: white;">{{images.profile}}</h5>
+                            <a href="#"><img class="card-img-top" style="height: 25rem; width:30rem;" src="{{images.image.url}}" alt="card image cap" data-toggle="modal" data-target="#exampleModal"></a>
+                            <div class="card-body" style="width:30rem;background-color: grey; color: white;">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h5 style="text-align: center;" class="card-title">{{images.image_name}}</h5>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h5 style="text-align: center;" class="card-title">Category:{{images.caption}}</h5>
+                                    </div>
+                                </div>
+                                <p class="card-text" style="text-align: center;">{{images.likes}}</p>
+                            </div>
+                        </li>
+                    </ul>
+                {% endfor %}
             </div>
         </div>
-        <div>
-            {% for images in image%}
-                <ul style="margin-left: 6.5em;">
-                    <li style="display:inline;">
-                        <h5 class="card-header" style="width:30rem; text-align: center; background-color: grey; color: white;">{{images.profile}}</h5>
-                        <a href="#"><img class="card-img-top" style="height: 25rem; width:30rem;" src="{{images.image.url}}" alt="card image cap" data-toggle="modal" data-target="#exampleModal"></a>
-                        <div class="card-body" style="width:30rem;background-color: grey; color: white;">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <h5 style="text-align: center;" class="card-title">{{images.image_name}}</h5>
-                                </div>
-                                <div class="col-md-12">
-                                    <h5 style="text-align: center;" class="card-title">Category:{{images.caption}}</h5>
-                                </div>
-                            </div>
-                            <p class="card-text" style="text-align: center;">{{images.likes}}</p>
-                        </div>
-                    </li>
-                </ul>
-            {% endfor %}
+        <div class="col-md-3 row">
+            <div class="col-md-6">
+                {% for user in users %}
+                    <a href="{% url 'view_profile_with_pk' pk=user.pk %}">
+                       <h4>{{user.username}}</h4>
+                    </a>
+                    {% if not user in followers%}
+                    <a href="{% url 'profile:follow' operation='add' pk=follow.pk %}">
+                        <button type="button" class="btn btn-default">Follow</button>
+                    </a>
+                    {% endif%}
+                {% endfor %}
+            </div>
+            <div class="col-md-6">
+                {% for follower in followers %}
+                    <a href="{% url 'view_profile_with_pk' pk=user.pk %}">
+                       <h4>{{follower.username}}</h4>
+                    </a>
+                    <a href="{% url 'profile:follow' operation='remove' pk=follow.pk %}">
+                        <button type="button" class="btn btn-default">Unfollow</button>
+                    </a>
+                {% endfor %}
+            </div>
         </div>
     </div>
 

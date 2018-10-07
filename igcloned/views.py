@@ -28,7 +28,11 @@ def profile(request):
     """
     profile = Profile.objects.get(user = request.user)
     image = Image.objects.all()
-    return render(request, 'Profile/profile.html', {'profile': profile, 'image':image})
+
+    # getting followers instance
+    # follower = Follower.objects.get(current_user=request.user)
+    # followers = Follower.users.all()
+    return render(request, 'Profile/profile.html', {'profile': profile, 'image':image, 'follower':follower})
 
 
 @login_required(login_url='/registration/login/')

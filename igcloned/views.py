@@ -28,11 +28,12 @@ def profile(request):
     """
     profile = Profile.objects.get(user = request.user)
     images = Image.objects.all()
+    comments = Comments.objects.all()
 
     # getting followers instance
     # follower = Follower.objects.get(current_user=request.user)
     # followers = Follower.users.all()
-    return render(request, 'Profile/profile.html', {'profile': profile, 'images':images, 'follower':follower})
+    return render(request, 'Profile/profile.html', {'profile': profile, 'images':images, 'comments':comments, 'follower':follower})
 
 
 @login_required(login_url='/registration/login/')
@@ -42,6 +43,7 @@ def new_image(request):
     if request.method == 'POST':
         upform = UploadImageForm(request.POST, request.FILES)
         if upform.is_valid():
+
             new_image = upform.save( commit=False )
             new_image.user = current_user
             upform.save()
@@ -63,7 +65,7 @@ def add_comment(request, image_id):
             comment.user = request.user
             comment.image = images
             comment.save()
-    return redirect('')
+        return redirect('profile')
 
 
 @login_required(login_url='/registration/login/')
@@ -83,6 +85,18 @@ def profile_edit(request):
 
     return render(request, 'Profile/profile_edit.html', {'form': form})
 
+
+@login_required(login_url='/registration/login/')
+def home(request):
+    """
+    render all users images
+    :param request:
+    :return:
+    """
+    images = Image.objects.all()
+    comments = Comments.objects.all()
+
+    return render(request, 'home.html', {'images': images, 'comments':comments})
 
 @login_required(login_url='/registration/login/')
 def follower(request, operation, pk):

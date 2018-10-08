@@ -1,32 +1,133 @@
 {% block body %}
+<style>
+
+.navbar .logo-section {
+  display: flex;
+  align-items: center;
+}
+.navbar .logo-section div {
+  align-self: stretch;
+  width: 2px;
+  background: black;
+  margin: 0 20px;
+}
+.navbar .logo {
+  width: 40px;
+}
+.navbar.logoname {
+  width: 130px;
+}
+</style>
   <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <div class="container">
-      <a class="navbar-brand" href="{% url 'profile' %}">CLONEWARS</a>
+      <section class="logo-section"><a href="{%url 'home'%}"><img class="logo" src="https://seeklogo.com/images/I/instagram-new-2016-glyph-logo-84CB825424-seeklogo.com.png"/></a>&nbsp;
+      <a class="navbar-brand" href="{% url 'home' %}">CLONEWARS</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="mainMenu">
+      <div class="collapse navbar-collapse" id="mainMenu" style="margin-left: 55em;">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'profile' %}">{{ user.username }}</a>
+            <a class="nav-link" href="{% url 'profile' %}"><strong>{{ user.username }}</strong></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            <a class="nav-link" href="{% url 'logout' %}"><strong>Logout</strong></a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="container">
-    <ol class="breadcrumb my-4">
-      {% block breadcrumb %}
-      {% endblock %}
-    </ol>
-    {% block content %}
-    {% endblock %}
-  </div>
+<!--<style>-->
+<!--.navbar {-->
+  <!--display: flex;-->
+  <!--justify-content: space-between;-->
+  <!--align-items: center;-->
+  <!--padding: 20px;-->
+  <!--border-bottom: 2px solid #ddd;-->
+<!--}-->
+
+<!--.navbar .icons-section .fa {-->
+  <!--text-decoration: none;-->
+  <!--color: inherit;-->
+  <!--font-size: 2rem;-->
+  <!--margin: 0 10px;-->
+<!--}-->
+<!--.navbar .input-search {-->
+  <!--padding: 10px;-->
+  <!--text-align: center;-->
+  <!--border-radius: 5px;-->
+  <!--border: 2px solix #ddd;-->
+  <!--outline: 0;-->
+<!--}-->
+<!--.navbar .input-search:focus {-->
+  <!--text-align: left;-->
+<!--}-->
+<!--</style>-->
+<!--<nav class="navbar">-->
+    <!--<section class="logo-section"><a href="{%url 'home'%}"><img class="logo" src="https://seeklogo.com/images/I/instagram-new-2016-glyph-logo-84CB825424-seeklogo.com.png"/></a>-->
+    <!--<div></div>-->
+
+      <!--<a href="{%url 'home'%}"><img class="logoname" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2000px-Instagram_logo.svg.png"/></a>-->
+  <!--</section>-->
+    <!--&lt;!&ndash;search form&ndash;&gt;-->
+  <!--&lt;!&ndash; Adding a search form  &ndash;&gt;-->
+      <!--<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">-->
+
+        <!--<form class="navbar-form" role="search" action="#">-->
+
+          <!--<div class="input-group" style="width: 200px;">-->
+            <!--<input type="text" class="form-control" placeholder="Search Image" name="profile">-->
+            <!--<div class="input-group-btn">-->
+              <!--<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>-->
+            <!--</div>-->
+          <!--</div>-->
+
+        <!--</form>-->
+      <!--</div>-->
+      <!--&lt;!&ndash; search form end &ndash;&gt;-->
+    <!--&lt;!&ndash;end of search form&ndash;&gt;-->
+ <!--<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">-->
+            <!--{% if user.is_authenticated %}-->
+            <!--<ul>-->
+              <!--<li class="dropdown">-->
+                <!--<a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false"><div class="col-md-3">-->
+            <!--<img src="/static/images/Profile.png" alt="Instagram Photo">-->
+        <!--</div>-->
+                          <!--<span class="caret"></span>-->
+                      <!--</a>-->
+                <!--<ul class="dropdown-menu" role="menu">-->
+                  <!--<li>-->
+                    <!--<a href="{% url 'home' %}">Home</a>-->
+                  <!--</li>-->
+                    <!--<li>-->
+                    <!--<a href="{% url 'profile' %}">Profile</a>-->
+                  <!--</li>-->
+
+                  <!--<li>-->
+                    <!--<a href="{% url 'password_reset'%}">Change Password</a>-->
+                  <!--</li>-->
+                    <!--<li>-->
+                    <!--<a href="{% url 'logout' %}">Logout</a>-->
+                  <!--</li>-->
+
+                <!--</ul>-->
+              <!--</li>-->
+            <!--</ul>-->
+            <!--{% else %}-->
+            <!--<li>-->
+              <!--<a class='btn btn-default' href="{% url 'login'%}">Login</a>-->
+            <!--</li>-->
+
+            <!--{% endif %}-->
+          <!--</div>-->
+<!--</nav>-->
+  <!--<div class="container">-->
+    <!--<ol class="breadcrumb my-4">-->
+      <!--{% block breadcrumb %}-->
+      <!--{% endblock %}-->
+    <!--</ol>-->
+    <!--{% block content %}-->
+    <!--{% endblock %}-->
+  <!--</div>-->
 {% endblock body %}

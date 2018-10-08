@@ -59,9 +59,9 @@ class Image(models.Model):
     image = models.ImageField(upload_to='media', blank=True)
     image_name = models.CharField(max_length=200)
     caption = models.CharField(max_length=1000)
-    profile = models.ForeignKey(Profile, null=True)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
     likes = models.ForeignKey(Likes, null=True)
-    user = models.ForeignKey(User , on_delete=models.CASCADE , default=True)
+    user = models.ForeignKey(User , on_delete=models.CASCADE, default=True)
 
     def save_image(self):
         """

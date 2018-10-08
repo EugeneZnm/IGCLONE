@@ -13,7 +13,11 @@ urlpatterns =[
 
     url(r'^profile/', views.profile, name='profile'),
 
+    url(r'^home/', views.home, name='home'),
+
     url(r'^follow/(?P<operation>,+)/(?P<pk>\d+)/$', views.follower, name='follow'),
+
+    url(r'^comment/(?P<image_id>\d+)', views.add_comment, name='comment'),
 ]
 
 if settings.DEBUG:

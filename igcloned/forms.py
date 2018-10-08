@@ -20,12 +20,11 @@ class SignUpForm(UserCreationForm):
 class EditProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        exclude = ['email','avatar']
-        fields = ['Bio', 'location', 'phone_number']
+        exclude = ['email']
+        fields = ['avatar', 'Bio', 'location', 'phone_number']
 
 
 class UploadImageForm(forms.ModelForm):
     class Meta:
         model = Image
-        exclude =['profile','likes']
         fields = ['image', 'image_name', 'caption']

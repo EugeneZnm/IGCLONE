@@ -27,23 +27,27 @@ def profile(request):
 
     """
     profile = Profile.objects.get(user = request.user)
-    image = Image.objects.all()
+    images = Image.objects.all()
 
     # getting followers instance
     # follower = Follower.objects.get(current_user=request.user)
     # followers = Follower.users.all()
-    return render(request, 'Profile/profile.html', {'profile': profile, 'image':image, 'follower':follower})
+    return render(request, 'Profile/profile.html', {'profile': profile, 'images':images, 'follower':follower})
 
 
 @login_required(login_url='/registration/login/')
 def new_image(request):
     current_user = request.user
-    upform = UploadImageForm()
+
     if request.method == 'POST':
-        upform = UploadImageForm(request.POST, request.FILES, instance=current_user.profile)
+        upform = UploadImageForm(request.POST, request.FILES)
         if upform.is_valid():
+            new_image = upform.save( commit=False )
+            new_image.user = current_user
             upform.save()
         return redirect('profile')
+    else:
+        upform = UploadImageForm()
 
     return render(request, 'Profile/img.html', {"upform": upform})
 

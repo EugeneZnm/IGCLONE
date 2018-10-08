@@ -9,11 +9,10 @@
             <div class="col-lg-8 col-md-10 col-sm-12">
               <div class="card">
                 <div class="card-body">
-                  <form method="post" novalidate>
+                  <form method="post" action="{% url 'new_image'%}" enctype="multipart/form-data" novalidate>
                     {% csrf_token %}
-                    <!--{% include 'Includes/form.html' %}-->
-                    {{ form.upform }}
-                    <button type="submit" class="btn btn-success btn-block" style="margin-left: 0em;">Update Profile</button>
+                    {{ upform|crispy }}
+                    <button type="submit" class="btn btn-success btn-block" style="margin-left: 0em;">Upload Image</button>
                   </form>
                 </div>
               </div>

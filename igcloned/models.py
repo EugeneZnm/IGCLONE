@@ -12,7 +12,7 @@ class Profile(models.Model):
     """
     method to create profile
     """
-    avatar = models.ImageField(upload_to='media', null=True)
+    avatar = models.ImageField(upload_to='media/', null=True)
     Bio = models.CharField(max_length=2000)
     # deletion of profile and user when deleted
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
@@ -68,6 +68,7 @@ class Image(models.Model):
     caption = models.CharField(max_length=1000)
     profile = models.ForeignKey(Profile, null=True)
     likes = models.ForeignKey(Likes, null=True)
+    user = models.ForeignKey(User , on_delete=models.CASCADE , default=True)
 
     def save_image(self):
         """

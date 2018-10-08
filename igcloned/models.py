@@ -52,13 +52,6 @@ class Likes(models.Model):
     Likes = models.IntegerField(default=0)
 
 
-class Comments(models.Model):
-    """
-    comment model for comments
-    """
-    comment = models.TextField()
-
-
 class Image(models.Model):
     """
     Image model creating table
@@ -92,6 +85,15 @@ class Image(models.Model):
         :return:
         """
         self.delete()
+
+
+class Comments(models.Model):
+    """
+    comment model for comments
+    """
+    comment = models.TextField()
+    image = models.ForeignKey(Image, on_delete=models.CASCADE, related_name='comments', null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
 
 class Follower(models.Model):

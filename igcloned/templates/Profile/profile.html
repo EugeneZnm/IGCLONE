@@ -12,9 +12,9 @@
         <div class="col-md-9">
             <div class="row container jumbotron " style="width: 700px; height: 350px; position: relative; left: 33%; background-color: cream !important;">
                 <div class="col-md-4">
-                    <div class="card-body" style="position: relative; top: -20%;">
+                    <div class="card-body" style="position: relative; top: -20%; ">
                         {% if profile.avatar %}
-                        <img src="{{ profile.avatar.url }}" alt="card image cap">
+                        <img  style="width: 200px;" src="{{ profile.avatar.url }}" alt="card image cap">
                         {% else %}
                      <div >
                         <img style="width: 200px;" src="https://www.w3schools.com/howto/img_avatar.png" alt="card image cap">
@@ -94,6 +94,15 @@
                     <div class="card-body">
                         <h4 class="card-title">{{image.image_name}}</h4>
                         <p class="card-text">{{image.caption}}</p>
+                        {% for comment in comments%}
+                         <h6>{{comment.comment}}</h6>
+                        {% endfor%}
+                        <form method="post" action="{% url 'profile'%}" enctype="multipart/form-data" novalidate>
+                            {% csrf_token %}
+                            {% include 'Includes/form.html' %}
+                            <!--{{ form.as_p}}-->
+                            <button type="submit" class="btn btn-success" style="margin-left: 0em;">Update Profile</button>
+                        </form>
                     </div>
                 </div>
             </div>

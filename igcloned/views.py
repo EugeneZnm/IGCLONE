@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 # import django UserCreation Form
 from django.contrib.auth.forms import UserCreationForm
@@ -7,13 +7,13 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login as auth_login
 
 # import SignupForm from forms.py
-from .forms import SignUpForm, EditProfileForm, UploadImageForm
+from .forms import SignUpForm, EditProfileForm, UploadImageForm, CommentForm
 
 from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth.models import User
 
-from .models import Profile, Image, Follower
+from .models import Profile, Image, Follower, Comments
 
 
 # Create your views here.
@@ -50,6 +50,20 @@ def new_image(request):
         upform = UploadImageForm()
 
     return render(request, 'Profile/img.html', {"upform": upform})
+
+
+@login_required(login_url='/registration/login/')
+def add_comment(request, image_id):
+
+    images = get_object_or_404(Image, pk=image_id)
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.user = request.user
+            comment.image = images
+            comment.save()
+    return redirect('')
 
 
 @login_required(login_url='/registration/login/')

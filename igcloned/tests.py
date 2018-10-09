@@ -5,6 +5,7 @@ from django.core.urlresolvers import reverse
 from django.urls import resolve
 from django.test import TestCase
 from .views import signup
+from .forms import SignUpForm
 
 
 class SignUpTests(TestCase):
@@ -27,7 +28,7 @@ class SignUpTests(TestCase):
 
     def test_contains_form(self):
         form = self.response.context.get('form')
-        self.assertIsInstance(form, UserCreationForm)
+        self.assertIsInstance(form, SignUpForm)
 
 
 class SuccessfulSignUpTests(TestCase):
@@ -38,11 +39,22 @@ class SuccessfulSignUpTests(TestCase):
         url = reverse('signup')
         data = {
             'username': 'eugene',
+            'email': 'eugenenzioki@gmail.com',
             'password1': 'qwerty123',
             'password2': 'qwerty123'
         }
         self.response = self.client.post(url, data)
         self.edit_profile_url = reverse('edit_profile')
+
+    def test_form_inputs(self):
+        """
+        testing form input
+        :return:
+        """
+        self.assertContains(self.response, '<input', 5)
+        self.assertContains(self.response, 'type="text"', 1)
+        self.assertContains(self.response, 'type="email"', 1)
+        self.assertContains(self.response, 'type="password"', 2)
 
     def test_redirection(self):
         """
@@ -61,3 +73,26 @@ class SuccessfulSignUpTests(TestCase):
         response = self.client.get(self.edit_profile_url)
         user = response.context.get('user')
         self.assertTrue(user.is_authenticated)
+
+
+# invalid signup tests
+class InvalidSignUpTests(TestCase):
+    """
+    testing for signup
+    """
+    def setUp(self):
+        url = reverse('signup')
+        self.response = self.client.post(url, {})  # submit an empty dictionary
+
+    def test_signup_status_code(self):
+        """
+        testing invalid form submission
+        """
+        self.assertEquals(self.response.status_code, 200)
+
+    def test_form_errors(self):
+        form = self.response.context.get('form')
+        self.assertTrue(form.errors)
+
+    def test_dont_create_user(self):
+        self.assertFalse(User.objects.exists())

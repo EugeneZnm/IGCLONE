@@ -9,19 +9,19 @@
 
     {% block content %}
 
-    <div class="container">
+        <div class="container">
 
-        <div class="row">
+        <div style="margin-top: 2em;">
             {% for image in images%}
-            <div class="col-md-12" style="margin-top: 2em;">
+            <div>
                 <div class="card" style="margin-bottom: 2em; width: 600px; position: relative; left: 25%;">
-                    <div class="card-header">{{image.user}}</div>
+                    <div class="card-header" style="background-color: lightgrey; "><strong>{{user.username}}</strong></div>
                     <img class="card-img-top" style="height: 500px;" src="{{ image.image.url }}" alt="card image cap">
-                    <div class="card-body" style="position: relative; left: 25%;">
+                    <div class="card-body">
                         <h4 class="card-title">{{image.image_name}}</h4>
                         <p class="card-text">{{image.caption}}</p>
-                        {% for comment in image.comment_set.all %}
-                            <li>
+                        {% for comment in image.comments.all %}
+                            <li style="list-style: none;">
                                 {{comment.user.username}}
                                 {{comment.comment}}
                             </li>
@@ -30,7 +30,7 @@
                         <form action="{% url 'comment' image_id=image.id %}"  enctype="multipart/form-data" novalidate method="post">
                             {% csrf_token %}
                             <input class="add-comment" name="comment" id="comment{{image.id}}" type="text" placeholder="Comment on this image....">
-                            <button type="submit" class="btn btn-success" style="margin-left: 0em;">comment</button>
+                            <button type="submit" class="btn btn-default" style="margin-left: 0em;">comment</button>
                         </form>
                     </div>
                 </div>

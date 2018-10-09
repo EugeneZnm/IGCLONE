@@ -31,6 +31,17 @@ class SignUpTests(TestCase):
         self.assertIsInstance(form, SignUpForm)
 
 
+class SignUpFormTest(TestCase):
+    """
+    testing signup form is working
+    """
+    def test_form_has_fields(self):
+        form = SignUpForm()
+        expected = ['username', 'email', 'password1', 'password2',]
+        actual = list(form.fields)
+        self.assertSequenceEqual(expected, actual)
+
+
 class SuccessfulSignUpTests(TestCase):
     """
     successful signup tests

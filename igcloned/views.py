@@ -98,6 +98,7 @@ def home(request):
 
     return render(request, 'home.html', {'images': images, 'comments':comments})
 
+
 @login_required(login_url='/registration/login/')
 def follower(request, operation, pk):
     """
